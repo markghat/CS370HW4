@@ -46,9 +46,9 @@ class PerceptronModel(object):
         "*** YOUR CODE HERE ***"
         Bool=True
         for x, y in dataset.iterate_once(1):
-            y_pred = self.get_prediction(x)
+            y_hat = self.get_prediction(x)
             y_true = nn.as_scalar(y)
-            if y_pred != y_true:
+            if y_hat != y_true:
                 direction = x
                 multiplier = y_true 
                 self.w.update(direction, multiplier)
